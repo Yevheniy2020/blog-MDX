@@ -1,7 +1,17 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import prisma from "@/lib/prisma";
+const postNewContent = async () => {
+  await prisma.blogPage.create({
+      data: {
+        content: "Hello world"
+      }
+  });
+};
 
-export default function Home() {
+export default async function Home() {
+
+  await postNewContent();
   return (
     <main className={styles.main}>
       <div className={styles.description}>
