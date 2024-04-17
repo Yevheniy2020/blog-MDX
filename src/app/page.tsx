@@ -2,7 +2,7 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import prisma from "@/lib/prisma";
 const postNewContent = async () => {
-  await prisma.blogPage.create({
+  await prisma.post.create({
       data: {
         content: "Hello world"
       }
